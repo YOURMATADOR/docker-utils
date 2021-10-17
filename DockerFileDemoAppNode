@@ -1,0 +1,16 @@
+FROM node:12
+
+
+WORKDIR /app
+
+RUN git clone https://github.com/fireship-io/docker-nodejs-basic-demo
+
+WORKDIR /app/docker-nodejs-basic-demo
+
+RUN npm i
+
+ENV PORT=8080
+
+EXPOSE 8080
+
+CMD ["npm","start"]
